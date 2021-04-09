@@ -10,7 +10,7 @@ export default class MyDocument extends Document {
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
         </Head>
         <body>
-          <style>{`#__next { height: 100%; display: flex; flex-direction: column; }`}</style>
+          <style>{`#__next { height: 100%; display: flex; flex-direction: column; max-height: -webkit-fill-available; }`}</style>
           <Main />
           <NextScript />
         </body>

@@ -14,7 +14,9 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
   },
   bullet: {
+    fontSize: "5rem",
     opacity: 0.33,
+    transform: "translateY(0.5rem)",
   },
 }));
 
