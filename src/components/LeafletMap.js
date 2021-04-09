@@ -24,7 +24,7 @@ const LeafletMap = ({ center }) => {
       {loading && <Backdrop />}
       {!loading && snapshots && (
         <MapContainer center={center} zoom={15} scrollWheelZoom={true}>
-          <TileLayer attribution="" url={`https://tiles.stadiamaps.com/tiles/${providers[theme.palette.type]}/{z}/{x}/{y}{r}.png`} />
+          <TileLayer attribution="" url={`https://tiles.stadiamaps.com/tiles/${providers[theme.palette.type]}/{z}/{x}/{y}{r}.png?api_key=${process.env.NEXT_PUBLIC_LEAFLET_TILE_KEY}`} />
           {snapshots.map((v) => {
             const order = v.val();
             return (
