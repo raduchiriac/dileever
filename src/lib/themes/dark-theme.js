@@ -1,15 +1,15 @@
-import { createMuiTheme } from "@material-ui/core/styles";
-import { COLOR_PALETTE } from "../constants";
+import { createTheme } from "@material-ui/core/styles";
+import { COLOR_PALETTE, BREAKPOINTS } from "../constants";
 
-export const DarkTheme = createMuiTheme({
+export const DarkTheme = createTheme({
   typography: {
     useNextVariants: true,
   },
+  breakpoints: BREAKPOINTS,
   palette: {
     primary: {
-      main: "#F3F3F3",
+      main: COLOR_PALETTE.white,
     },
     type: "dark",
   },
-  custom_palette: COLOR_PALETTE,
 });

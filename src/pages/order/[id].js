@@ -23,11 +23,14 @@ import DoneIcon from "@material-ui/icons/Done";
 import PhoneCallbackIcon from "@material-ui/icons/PhoneCallback";
 
 const useStyles = makeStyles((theme) => ({
-  paper: {
-    padding: "6px 16px 16px",
-    alignItems: "center",
-    display: "flex",
-    justifyContent: "flex-end",
+  root: {
+    transform: "translateX(-1rem)",
+  },
+  time: {
+    marginTop: "0.5rem",
+  },
+  status: {
+    marginTop: "0.25rem",
   },
   secondaryTail: {
     backgroundColor: theme.palette.secondary.main,
@@ -38,10 +41,10 @@ export default function Order() {
   const classes = useStyles();
 
   return (
-    <Timeline align="left">
+    <Timeline align="left" className={classes.root}>
       <TimelineItem>
         <TimelineOppositeContent>
-          <Typography variant="body2" color="textSecondary">
+          <Typography variant="body2" color="textSecondary" className={classes.time}>
             9:30 am
           </Typography>
         </TimelineOppositeContent>
@@ -53,7 +56,7 @@ export default function Order() {
         </TimelineSeparator>
         <TimelineContent>
           <Box>
-            <Typography variant="h6" component="h1">
+            <Typography variant="h6" component="h1" className={classes.status}>
               Ordered
             </Typography>
           </Box>
@@ -61,7 +64,7 @@ export default function Order() {
       </TimelineItem>
       <TimelineItem>
         <TimelineOppositeContent>
-          <Typography variant="body2" color="textSecondary">
+          <Typography variant="body2" color="textSecondary" className={classes.time}>
             10:00 am
           </Typography>
         </TimelineOppositeContent>
@@ -73,7 +76,7 @@ export default function Order() {
         </TimelineSeparator>
         <TimelineContent>
           <Box>
-            <Typography variant="h6" component="h1">
+            <Typography variant="h6" component="h1" className={classes.status}>
               Prepared
             </Typography>
           </Box>
@@ -88,7 +91,7 @@ export default function Order() {
         </TimelineSeparator>
         <TimelineContent>
           <Box>
-            <Typography variant="h6" component="h1">
+            <Typography variant="h6" component="h1" className={classes.status}>
               Picked
             </Typography>
           </Box>
@@ -102,7 +105,7 @@ export default function Order() {
         </TimelineSeparator>
         <TimelineContent>
           <Box>
-            <Typography variant="h6" component="h1">
+            <Typography variant="h6" component="h1" className={classes.status}>
               Delivered
             </Typography>
           </Box>

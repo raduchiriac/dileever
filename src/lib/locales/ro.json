@@ -1,0 +1,20 @@
+{
+  "_symbols": "Ă Â Î ă â î Ș ș Ț ț",
+  "home": "Acasă",
+  "map": "Hartă",
+  "orders": "Comenzi",
+  "drivers": "Șoferi",
+  "id": "Nr. comandă",
+  "kitchen": "Bucătărie",
+  "readyTime": "A se prepara pentru ora",
+  "needsDelivery": "Necesită livrare",
+  "address": "Adresă cu auto-completare",
+  "addressAlt": "Adresă alternativă",
+  "extraInformation": "Informații pentru șofer",
+  "phone": "Telefon",
+  "price": "Preț",
+  "add": "Adaugă",
+  "cancel": "Anulează",
+  "currency": "RON",
+  "newOrder": "Comanda nouă"
+}

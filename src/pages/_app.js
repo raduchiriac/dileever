@@ -1,9 +1,13 @@
-import { useEffect } from "react";
-import { GlobalContextProvider } from "../lib/contexts/GlobalContext";
+import React, { useEffect } from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import MainLayout from "../components/layouts/MainLayout";
+import { GlobalContextProvider } from "../lib/contexts/GlobalContext";
+import { initAuth } from "../lib/firebase/firebase";
+import I18n from "../lib/i18n";
 
 import "../styles/global.css";
+
+initAuth();
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -15,12 +19,15 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   return (
-    <GlobalContextProvider>
-      <CssBaseline />
-      <MainLayout>
-        <Component {...pageProps} />
-      </MainLayout>
-    </GlobalContextProvider>
+    <I18n lngDict={pageProps.lngDict} locale={pageProps.lng}>
+      <GlobalContextProvider>
+        <CssBaseline />
+
+        <MainLayout>
+          <Component {...pageProps} />
+        </MainLayout>
+      </GlobalContextProvider>
+    </I18n>
   );
 }
 

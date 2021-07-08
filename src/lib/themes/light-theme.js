@@ -1,13 +1,11 @@
-import { createMuiTheme } from "@material-ui/core/styles";
-import { COLOR_PALETTE } from "../constants";
+import { createTheme } from "@material-ui/core/styles";
+import { COLOR_PALETTE, BREAKPOINTS } from "../constants";
 
-export const LightTheme = createMuiTheme({
+export const LightTheme = createTheme({
   typography: {
     useNextVariants: true,
-    button: {
-      textTransform: "none",
-    },
   },
+  breakpoints: BREAKPOINTS,
   // https://material-ui.com/customization/palette/
   palette: {
     primary: {

@@ -9,12 +9,7 @@ const GlobalContext = createContext();
 
 let initialState = {
   THEME: "light",
-  // USER_LANG: "ro",
-  // STRINGS: i18n["ro"],
-  // showMap: true,
-  // drawerWidth: 220,
-  // isiOS: process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent),
-  // LANGUAGES_LABEL: Object.keys(i18n).map((l) => ({ code: l, text: i18n[l].LANG_LABEL })),
+  isiOS: process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent),
 };
 
 let reducer = (state, action) => {
@@ -45,9 +40,9 @@ function GlobalContextProvider({ children }) {
               content: "minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no",
             },
             { name: "description", content: "" },
-            { name: "theme-color", content: COLOR_PALETTE.primary },
-            { name: "msapplication-navbutton-color", content: COLOR_PALETTE.primary },
-            { name: "apple-mobile-web-app-status-bar-style", content: COLOR_PALETTE.primary },
+            { name: "theme-color", content: state.THEME == "dark" ? COLOR_PALETTE.black : COLOR_PALETTE.primary },
+            { name: "msapplication-navbutton-color", content: state.THEME == "dark" ? COLOR_PALETTE.black : COLOR_PALETTE.primary },
+            { name: "apple-mobile-web-app-status-bar-style", content: state.THEME == "dark" ? COLOR_PALETTE.black : COLOR_PALETTE.primary },
           ]}
         />
         {children}

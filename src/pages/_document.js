@@ -5,12 +5,12 @@ import { ServerStyleSheets } from "@material-ui/core/styles";
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html>
+      <Html lang={this.props.lang}>
         <Head>
+          <link rel="icon" href="/favicon.png" />
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
         </Head>
         <body>
-          <style>{`#__next { height: 100%; display: flex; flex-direction: column; max-height: -webkit-fill-available; }`}</style>
           <Main />
           <NextScript />
         </body>
@@ -57,6 +57,7 @@ MyDocument.getInitialProps = async (ctx) => {
 
   return {
     ...initialProps,
+    lang: ctx.query.lng,
     // Styles fragment is rendered after the app and page rendering finish.
     styles: [...React.Children.toArray(initialProps.styles), sheets.getStyleElement()],
   };
